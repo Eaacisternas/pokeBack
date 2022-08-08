@@ -4,6 +4,8 @@ import (
 	"context"
 	"log"
 
+	// "github.com/eaacisternas/pokeBack/middlewears"
+	// "github.com/eaacisternas/pokeBack/routers"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )

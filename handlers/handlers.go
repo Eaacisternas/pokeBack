@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"os"
 
+	middleware "github.com/eaacisternas/pokeBack/middlewears"
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
 )
@@ -12,6 +13,7 @@ import (
 /*Manejadores seteo mi puerto, el handler y agrero un listener al server*/
 func Manejadores() {
 	router := mux.NewRouter()
+	router.HandleFunc("/procesarListadoPokemon", middleware.ValBD(routers.procesarListadoPokemon)).Methods("POST")
 	PORT := os.Getenv("PORT")
 	if PORT == "" {
 		PORT = "8080"
